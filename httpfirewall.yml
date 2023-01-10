@@ -1,0 +1,29 @@
+---
+- name: Install webserver and allow on firewall rules
+  hosts: lab
+
+  tasks:
+  - name: Install Apache Packages
+    yum:
+      name: httpd
+      state: present
+  
+  - name: Start httpd
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+  
+  - name: add http port to firewall
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
+  
+  - name: restart firewalld
+    service:
+      name: firewalld
+      state: reloaded
+      
+
+

@@ -1,0 +1,15 @@
+---
+- name: Installing Package and Starting Service
+  hosts: localhost
+
+  tasks:
+  - name: Install Package HTTPD
+    yum:
+      name: httpd
+      state: present
+  
+  - name: Start and Enable Service
+    service:
+      name: httpd
+      state: started
+      enabled: yes

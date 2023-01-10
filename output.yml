@@ -1,0 +1,8 @@
+---
+- name: Output To Screen playbook
+  hosts: localhost
+
+  tasks:
+  - name: Output hello world to Screen
+    debug:
+      msg: Hello world
