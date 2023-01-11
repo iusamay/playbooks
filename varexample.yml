@@ -1,0 +1,16 @@
+---
+- name: Install some package
+  hosts: all
+  vars:
+    sespackage: sesquipedalianism
+  
+  tasks:
+  - name: Package install 
+    yum:
+      name: "{{ sespackage }}"
+      state: present
+  
+  - name: start service
+    service:
+      name: "{{ sespackage }}"
+      state: started

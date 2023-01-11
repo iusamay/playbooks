@@ -1,0 +1,10 @@
+---
+- name: Create user playbook
+  hosts: lab
+
+  tasks:
+  - name: Creating user
+    user:
+      name: george
+      comment: "george lopez"
+      shell: /bin/bash

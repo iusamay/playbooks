@@ -1,0 +1,19 @@
+---
+- name: Install Packages
+  hosts: all
+  
+  tasks:
+  - name: Install Httpd
+    yum:
+      name: httpd
+      state: present
+  
+  - name: install time package
+    yum:
+      name: ntp
+      state: present
+
+  - name: install dns package
+    yum:
+      name: named
+      state: present

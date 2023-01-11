@@ -1,0 +1,11 @@
+# SHELL MODULE ALLOWS YOU TO RUN SHELL SCRIPTS ON REMOTE HOSTS
+# NOTE: the script has to be available in the remote hosts or worker nodes
+
+---
+- name: Run Shellscripts on remote clients
+  hosts: lab
+
+  tasks:
+
+  - name: Run shell scripts on remote clients
+    shell: "/root/cfile.sh"

@@ -1,0 +1,14 @@
+---
+- name: Kill running process
+  hosts: lab
+
+  tasks:
+  - name: get running processes form remote hosts
+    ignore_errors: yes
+    shell: "ps -ef | grep top | awk '{print $2}'"
+    register: running_process
+  
+  - name: kill running process
+    ignore_errors: yes
+    shell: "kill {{ item }}"
+    with_items: "{{ running_process.stdout_lines }}"

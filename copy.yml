@@ -1,0 +1,15 @@
+# COPY MODULE
+---
+- name: Copying file tp remote clients
+  hosts: lab
+
+  tasks:
+  - name: Copying file
+    become: true
+    copy:
+      src: /root/some.cfg
+      dest: /tmp
+      mode: 0644
+      owner: usama
+      group: usama
+

@@ -1,0 +1,14 @@
+---
+- name: copy file to remote clients
+  hosts: all
+  vars:
+    srcfile: /root/somefile
+
+  tasks:
+  - name: Copying file
+    copy:
+      src: "{{ srcfile }}"
+      dest: /tmp
+      owner: root
+      group: root
+      mode: 644

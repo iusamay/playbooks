@@ -1,0 +1,9 @@
+---
+- name: changing file permissions
+  hosts: lab
+
+  tasks:
+  - name: file permissions
+    file:
+      path: /root/dummyfile
+      mode: 666

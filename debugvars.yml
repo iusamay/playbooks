@@ -1,0 +1,10 @@
+---
+- name: Print Hello World
+  hosts: all
+  vars:
+    say: hello world!
+  
+  tasks:
+  - name: Ansible Variable Basic Usage
+    debug:
+      msg: "{{ say }}" 
