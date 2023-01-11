@@ -10,7 +10,7 @@
   
   - name: install time package
     yum:
-      name: time
+      name: ntp
       state: present
 
   - name: install dns package

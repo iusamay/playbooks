@@ -1,0 +1,14 @@
+---
+- name: create a file
+  hosts: all
+  vars:
+    file_name: kramer
+
+  tasks:
+  - name: create a file
+    file:
+      state: touch
+      mode: 0644
+      path: /tmp/{{ file_name }}.txt
+      owner: root
+      group: root
