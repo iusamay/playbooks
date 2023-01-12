@@ -1,0 +1,12 @@
+---
+- name: Create users thru var and loop
+  hosts: all
+  vars:
+    users: [jerry,kramer,eliane]
+
+# USING VARS FOR LOOPS 
+  tasks:
+  - name: Create users
+    user:
+      name: '{{ items }}'
+    with_items: '{{ users }}'

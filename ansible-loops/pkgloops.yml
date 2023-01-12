@@ -1,0 +1,10 @@
+---
+- name: Installing packages thru direct calling vars
+  hosts: all 
+  vars:
+    packages: [ftp,psmisc,httpd]
+  tasks:
+  - name: Installing packages
+    yum:
+      name: "{{ packages }}"
+      state: present
