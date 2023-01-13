@@ -1,0 +1,6 @@
+---
+- name: Install samba package
+  tags: samba
+  yum:
+    name: samba
+    state: latest

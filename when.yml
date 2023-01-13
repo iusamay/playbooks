@@ -1,0 +1,16 @@
+---
+- name: Install Apache Webserver
+  hosts: localhost
+
+  tasks:
+  - name: Install Apache on ubuntu server
+    apt:
+      name: apache2
+      state: present
+    when: ansible_distribution == "Ubuntu"
+  
+  - name: Install apache on CentOS server
+    yum:
+      name: httpd
+      state: present
+    when: ansible_distribution == "CentOS"

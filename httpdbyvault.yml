@@ -1,0 +1,9 @@
+---
+- name: Install httpd with security
+  hosts: all
+  
+  tasks:
+  - name: Install httpd
+    yum:
+      name: httpd
+      state: present

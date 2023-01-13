@@ -1,0 +1,10 @@
+---
+- name: Playbook description
+  hosts: localhost
+
+  tasks:
+  - name: Start a service
+    when: A == "B"
+    service:
+      name: servicename
+      state: started
